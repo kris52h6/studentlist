@@ -1,14 +1,151 @@
-.grid {
-  display: flex;
+:root {
+  --primary-color: white;
 }
 
-.grid p {
+body {
+  background-image: url(hogwarts-castle-.jpg);
+}
+
+@font-face {
+  font-family: "Harry";
+  src: url("fonts/HarryP.ttf");
+  src: url("fonts/HarryP.woff") format("woff");
+}
+
+img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.personliste {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 1rem;
+}
+
+p,
+h1 {
+  font-family: "Harry";
+}
+
+.crest {
+  width: 150px;
+  height: 150px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  background-image: var(--house-crest);
+  background-size: 100%;
+}
+
+input {
+  height: 20px;
+}
+
+.studentnumber {
+  color: white;
+}
+
+[data-filter="Gryffindor"] {
   cursor: pointer;
-  padding-right: 5px;
+  height: 30px;
+  background-color: red;
+  border: none;
+  font-family: "Harry";
+  font-size: 20px;
+}
+
+[data-filter="Slytherin"] {
+  cursor: pointer;
+  height: 30px;
+  background-color: green;
+  border: none;
+  font-family: "Harry";
+  font-size: 20px;
+}
+
+[data-filter="Hufflepuff"] {
+  cursor: pointer;
+  background-color: yellow;
+  height: 30px;
+  border: none;
+  font-family: "Harry";
+  font-size: 20px;
+}
+
+[data-filter="Ravenclaw"] {
+  cursor: pointer;
+  height: 30px;
+  background-color: blue;
+  border: none;
+  font-family: "Harry";
+  font-size: 20px;
+}
+
+[data-filter="Expelled"] {
+  cursor: pointer;
+  height: 30px;
+  background-color: black;
+  color: white;
+  border: none;
+  font-family: "Harry";
+  font-size: 20px;
+}
+
+[data-filter="*"] {
+  cursor: pointer;
+  height: 30px;
+  width: 70px;
+  border: none;
+  font-family: "Harry";
+  font-size: 20px;
+}
+
+[data-field="prefect"] {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.photo {
+  width: 100px;
+  height: 100px;
+}
+
+.house {
+  font-weight: bold;
+}
+.name {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.name2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#text {
+  margin-left: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.grid {
+  border: 2px solid white;
+  padding: 50px;
+  color: white;
 }
 
 .luk {
   cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  color: white;
 }
 
 iframe {
@@ -18,22 +155,80 @@ iframe {
 }
 
 #popup {
-  background-color: red;
+  background-color: var(--primary-color);
   position: fixed;
   top: 1vw;
   left: 30vw;
-  height: 600px;
-  width: 600px;
+  width: 200px;
   display: none;
+}
+
+[data-theme="Gryffindor"] {
+  --primary-color: red;
+  background-color: var(--primary-color);
+
+  --house-crest: url(assets/gryffindor-emblem.png);
+}
+
+[data-theme="Hufflepuff"] {
+  --primary-color: yellow;
+  background-color: var(--primary-color);
+
+  --house-crest: url(assets/hufflepuff-emblem.png);
+}
+
+[data-theme="Ravenclaw"] {
+  --primary-color: blue;
+  background-color: var(--primary-color);
+
+  --house-crest: url(assets/ravenclaw-emblem.png);
+}
+
+[data-theme="Slytherin"] {
+  --primary-color: green;
+  background-color: var(--primary-color);
+
+  --house-crest: url(assets/slytherin-emblem.png);
 }
 
 img {
   width: 300px;
   height: 350px;
-  background-color: blue;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
   display: block;
   width: 50%;
+}
+
+#sorting [data-sort-direction="asc"][data-action="sorted"]:after {
+  content: "↓";
+}
+
+#sorting [data-sort-direction="desc"][data-action="sorted"]:after {
+  content: "↑";
+}
+
+@media screen and (min-width: 650px) {
+  .personliste {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+  }
+
+  #popup {
+    width: 300px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .personliste {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+  }
+
+  #popup {
+    width: 500px;
+  }
 }

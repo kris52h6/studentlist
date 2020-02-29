@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Harry P';
+    src: url('HarryP.woff2') format('woff2'),
+        url('HarryP.woff') format('woff'),
+        url('HarryP.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+

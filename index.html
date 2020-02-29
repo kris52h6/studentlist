@@ -8,41 +8,93 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    <iframe
-      src="https://giphy.com/embed/IWvuFVQICQIr6"
-      width="480"
-      height="284"
-      frameborder="0"
-      class="giphy-embed"
-      allowfullscreen
-    ></iframe>
+    <h1>Hogwarts students</h1>
+    <h1 class="sound">&#128266; (warning sound @click)</h1>
+
+
+
     <p>
-      <a
-        href="https://giphy.com/gifs/harry-potter-hermione-granger-the-sorcerers-stone-IWvuFVQICQIr6"
-      ></a>
+      Filter:
+      <button class="filter" data-action="filter" data-filter="Gryffindor">Gryffindor</button>
+      <button class="filter" data-action="filter" data-filter="Slytherin">Slytherin</button>
+      <button class="filter" data-action="filter" data-filter="Hufflepuff">Hufflepuff</button>
+      <button class="filter" data-action="filter" data-filter="Ravenclaw">Ravenclaw</button>
+      <button class="filter" data-action="filter" data-filter="Expelled">Expelled</button>
+      <button class="filter" data-action="filter" data-filter="*">all</button>
     </p>
 
+
+    <table id="list">
+      <thead>
+        
+        <p id="sorting">
+          Sorting:
+          <button data-action="sort" data-sort-direction="asc" data-sort="firstName">
+            Firstname
+          </button>
+          <button data-action="sort" data-sort-direction="asc" data-sort="lastName">
+            Lastname
+          </button>
+          <button data-action="sort" data-sort-direction="asc" data-sort="house">
+            House
+          </button>
+          <button data-action="sort" data-sort-direction="asc" data-sort="gender">
+            Gender
+          </button>
+        </p>
+      </thead>
+      <tbody>
+        <!-- animal template will be copied and inserted here -->
+      </tbody>
+    </table>
+    
+    <input id="search" type="text" placeholder="Search..."></input>
+
+    
+    <p class="studentnumber"></p>
+
+    
     <template>
       <article class="grid">
         <!-- <img src="" alt="" /> -->
         <p class="name"></p>
         <p class="house"></p>
+        <p data-field="prefect">☐</p>
+
       </article>
     </template>
 
     <section class="personliste"></section>
 
-    <div id="popup">
-      <button class="luk">X</button>
-      <section class="indhold">
-        <article class="modul"></article>
+    <div id="popup" data-theme="">
+      <section id="indhold">
+        <button class="luk">X</button>
 
-        <img src="" alt="" />
+        <article class="modul"></article>
+        <div class="crest"></div>
+
+<section id="sectionwrapper">
+        <div id="text">
         <p class="name2"></p>
+        <p class="nickname"></p>
         <p class="house2"></p>
+        <p class="gender"></p>
+        <p class="bloodstatus"></p>
+        <p class="studentprefect"></p>
         <p class="description"></p>
+        <button class="expel">Expel</button>
+
+      </div>
+      <div id="section_photo">
+        <img class="photo" src="" alt="">;
       </section>
+    </section>
+     
+      
+
     </div>
+    <audio src="musk/theme.mp3" id="hp_theme"></audio>
+
   </body>
 
   <script src="script.js"></script>
